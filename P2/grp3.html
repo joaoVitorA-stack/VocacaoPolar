@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" type="image/png" href="../img/Teste-vocacional.ico">
+    <title>Teste Vocacional</title>
+    <link rel="stylesheet" href="style.css"> 
+</head>
+<body class="bodyQuest">
+    <div id="content">
+        <!-- O conteúdo da pergunta será inserido pelo JavaScript -->
+    </div>
+
+    <script>
+        // Função para zerar todas as pontuações no localStorage
+        function zerarPontuacoes() {
+            localStorage.removeItem('pontuacao3');
+            localStorage.removeItem('pontuacao3_pagina_atual');
+        }
+
+        // Função para carregar a página inicial
+        function carregarPaginaInicial() {
+            zerarPontuacoes(); // Zera as pontuações ao carregar a página
+
+            // Define o conteúdo inicial da página
+            document.getElementById('content').innerHTML = `
+            <div class="container">
+                <div class="card2">
+                    <img src="../imgCardPerg/fundoPerg1_grp1.png" alt="Descrição da Imagem" class="card-img">
+                    <h3><p class="card2-question">Se você pudesse escolher uma aventura para vivenciar, qual seria?</p></h3>
+                </div>
+                <div class="inputs2">
+                    <button class="input alternativa-btn" onclick="registrarResposta('SEGTRAB'); proximaPergunta(1)">Criar um plano de segurança para uma cidade subterrânea habitada por criaturas mágicas.</button>
+                    <button class="input alternativa-btn" onclick="registrarResposta('JURID'); proximaPergunta(1)">Defender um inocente em um julgamento histórico que decidirá o futuro da humanidade.</button>
+                     <button class="input alternativa-btn" onclick="registrarResposta('SEGTRAB'); proximaPergunta(1)">Utilizar um traje de última geração para explorar o centro de estrelas.</button>
+                    <button class="input alternativa-btn" onclick="registrarResposta('JURID'); proximaPergunta(1)">Protegar uma criatura mítica das maõs do governo.</button>
+                </div>
+                <div>
+            `;
+        }
+
+        // Carrega a página inicial quando o script é carregado
+        carregarPaginaInicial();
+
+        // Carrega pontuação existente ou inicializa com valores do Local Storage
+        let pontuacao3 = JSON.parse(localStorage.getItem('pontuacao3')) || {
+            SEGTRAB: 0,
+            JURID: 0
+        };
+
+        // Função para registrar a resposta e atualizar pontuação
+        function registrarResposta(resposta) {
+            pontuacao3[resposta]++;
+            localStorage.setItem('pontuacao3', JSON.stringify(pontuacao3));
+            console.log('Pontos Atualizados:', pontuacao3);
+        }
+
+        // Função para exibir a próxima pergunta
+        function proximaPergunta(pergunta) {
+            // Salva a pontuação da página atual no localStorage
+            localStorage.setItem('pontuacao3_pagina_atual', JSON.stringify(pontuacao3));
+
+            let nextContent = '';
+
+            if (pergunta === 1) {
+                nextContent = `
+                  <div class="container">
+                    <div class="card2">
+                        <img src="../imgCardPerg/fundoPerg2_grp1.png" alt="Descrição da Imagem" class="card-img">
+                        <h3><p class="card2-question">Qual dessas empresas você gostaria de criar?</p></h3>
+                    </div>
+                    <div class="inputs2">
+                        <button class="input alternativa-btn" onclick="registrarResposta('SEGTRAB'); proximaPergunta(2)">Empresa de criação de jogos e simulações para treinamento.</button>
+                        <button class="input alternativa-btn" onclick="registrarResposta('JURID'); proximaPergunta(2)">Um escritório de advocacia especializado em direito digital.</button>
+                         <button class="input alternativa-btn" onclick="registrarResposta('SEGTRAB'); proximaPergunta(2)">Uma empresa de consultoria que ajuda empresas a prevenir acidentes.</button>
+                        <button class="input alternativa-btn" onclick="registrarResposta('JURID'); proximaPergunta(2)">Escritório de Advocacia Criminal.</button>
+                    </div>
+                    </div>
+                `;
+            } else if (pergunta === 2) {
+                nextContent = `
+                  <div class="container">
+                    <div class="card2">
+                        <img src="../imgCardPerg/fundoPerg3_grp1.png" alt="Descrição da Imagem" class="card-img">
+                        <h3><p class="card2-question">Qual dessas frases mais te identifica?</p></h3>
+                    </div>
+                    <div class="inputs2">
+                        <button class="input alternativa-btn" onclick="registrarResposta('SEGTRAB'); proximaPergunta(3)">"A segurança é um valor, não um custo."</button>
+                        <button class="input alternativa-btn" onclick="registrarResposta('JURID'); proximaPergunta(3)">"A justiça é a base de uma sociedade justa e igualitária."</button>
+                          <button class="input alternativa-btn" onclick="registrarResposta('SEGTRAB'); proximaPergunta(3)">"A prevenção é o melhor remédio."</button>
+                        <button class="input alternativa-btn" onclick="registrarResposta('JURID'); proximaPergunta(3)">"A verdade sempre prevalece."</button>
+                    </div>
+                    </div>
+                `;
+            } else if (pergunta === 3) {
+                verificarpontuacao(); // Redireciona para a página final
+                return; // Para evitar sobrescrever o conteúdo após o redirecionamento
+            }
+
+            document.getElementById('content').innerHTML = nextContent;
+        }
+
+        // Função para verificar a pontuação final e redirecionar
+            function verificarpontuacao() {
+    // Salva a pontuação final no localStorage (já está sendo salvo nas funções anteriores)
+    localStorage.setItem('pontuacao3', JSON.stringify(pontuacao3));
+
+    // Redireciona para a página desejada
+    window.location.href = '../fruit3/fruitNinja.html'; // Substitua pelo URL correto
+
+        }
+    </script>
+</body>
+</html>

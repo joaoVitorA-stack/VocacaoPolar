@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" type="image/png" href="img/Teste-vocacional.ico">
+    <title>Resultado 2</title>
+    <link rel="stylesheet" href="result.css">
+    <style>
+        /* Adicione estilos básicos para visualização */
+        body {
+            font-family: Arial, sans-serif;
+        }
+        .btn-navigate {
+            display: inline-block;
+            padding: 10px 20px;
+            margin-top: 20px;
+            background-color: #13446a;
+            color: white;
+            border: none;
+            border-radius: 5px; 
+            text-decoration: none;
+            cursor: pointer;
+        }
+        .btn-navigate:hover {
+            background-color: #0366cf;
+        }
+    </style>
+</head>
+<body> 
+    <div id="page-content">
+        <div class="left-title">SEGURANÇA DO TRABALHO</div>
+        
+        <div class="image-container2">
+            <img src="../img/ursoresult.png" alt="Iceberg com o urso mascote">
+        </div>
+
+        <div class="result2-container">
+            <div class="result2">
+                <div class="result2-header">
+                    <ul class="nav nav-tabs result2-header-tabs">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="true" href="#content1" onclick="showContent('content1')">Perfil</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#content2" onclick="showContent('content2')">Campo 1</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#content3" onclick="showContent('content3')">Campo 2</a>
+                        </li>
+                    </ul>
+                </div> 
+                <div class="result2-body"> 
+                    <div id="content1" class="tab-content">
+                        <h5 class="result2-title">Guardião da Justiça</h5>
+                        <p class="result2-text">Você sempre procura fazer o que é certo, seja em discussões ou no cuidado com seus colegas. 
+                            Ético e justo, você tem facilidade para analisar situações e encontrar soluções que garantam a segurança e o bem-estar de todos. 
+                            Você é o tipo de pessoa que se preocupa em seguir as regras e garantir que tudo funcione de acordo, além de resolver conflitos de maneira calma e justa. </p>
+                    </div>
+                    <div id="content2" class="tab-content" style="display: none;">
+                        <h5 class="result2-title">Segurança do Trabalho</h5>
+                        <p class="result2-text">Seu curso mais compatível é o de Segurança do Trabalho, você vai aprender como identificar riscos, prevenir acidentes e 
+                            garantir que as empresas sigam as normas de segurança. As aulas incluem ergonomia, saúde ocupacional e legislação trabalhista. 
+                            O objetivo é formar profissionais que cuidem do bem-estar e da proteção dos trabalhadores, assegurando um ambiente de trabalho seguro. </p>  
+                    </div>
+                    <div id="content3" class="tab-content" style="display: none;">
+                        <h5 class="result2-title">Serviços Jurídicos</h5>
+                        <p class="result2-text">Você também pode se identificar com o curso de Serviços Jurídicos, indicado para quem tem interesse em entender e aplicar a lei no dia a dia. 
+                            O curso ensina sobre processos, legislação e como prestar suporte em questões jurídicas. Você vai aprender a auxiliar advogados e a lidar com processos judiciais e contratos. 
+                            O objetivo é formar profissionais capacitados para atuar em escritórios de advocacia, departamentos jurídicos de empresas ou no sistema de justiça. </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <a href="#" class="btn-navigate" onclick="alterarConteudo()">Conheça as áreas de atuação!</a>
+    </div>
+
+    <script>
+        function showContent(id) {
+            // Esconde todos os conteúdos
+            const contents = document.querySelectorAll('.tab-content');
+            contents.forEach(content => content.style.display = 'none');
+            
+            // Mostra o conteúdo selecionado
+            document.getElementById(id).style.display = 'block';
+        }
+
+        function alterarConteudo() {
+            const novoConteudo = `
+                <div class="left-block">
+                    <h2>Aqui está duas possíveis áreas que seu o curso dominante poderá atuar futuramente: </h2>
+                </div> 
+
+                <div class="content">
+                    <div class="result1">
+                        <img src="../img/ergo.png" alt="Imagem 1" class="result1-img-top">
+                        <div class="result1-body">
+                            <h3 class="result1-title">Consultoria em Ergonomia</h3>
+                            <p class="result1-text">Fazem análise de ambientes de trabalho e sugerem mudanças para torná-los mais confortáveis e seguros. 
+                                Isso ajuda a prevenir lesões e melhorar a produtividade dos funcionários. </p>
+                        </div>
+                    </div>
+
+                    <div class="result1">
+                        <img src="../img/gestão.png" alt="Imagem 2" class="result1-img-top">
+                        <div class="result1-body">
+                            <h3 class="result1-title">Gestão de Saúde Ocupacional</h3>
+                            <p class="result1-text">É responsável por cuidar da saúde dos trabalhadores dentro das empresas. 
+                                Ele cria programas para prevenir doenças e acidentes no ambiente de trabalho, garantindo que todos estejam seguros.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Botão no canto inferior direito -->
+                <button class="btn-redirect" onclick="window.location.href='../resultado/vestibulinho.html'">Conheça o Vestibulinho!</button>
+            `;
+
+            // Atualiza o conteúdo da página
+            document.getElementById('page-content').innerHTML = novoConteudo;
+        }
+
+        document.querySelectorAll('.nav-link').forEach(link => {
+    link.addEventListener('click', function() {
+        // Remove a classe 'active' de todos os links
+        document.querySelectorAll('.nav-link').forEach(navLink => {
+            navLink.classList.remove('active');
+        });
+
+        // Adiciona a classe 'active' ao link clicado
+        this.classList.add('active');
+    });
+});
+
+    </script>
+     <script src="script.js"></script>
+</body>
+</html>

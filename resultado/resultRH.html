@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" type="image/png" href="img/Teste-vocacional.ico">
+    <title>Resultado 2</title>
+    <link rel="stylesheet" href="result.css">
+    <style>
+        /* Adicione estilos básicos para visualização */
+        body {
+            font-family: Arial, sans-serif;
+        }
+        .btn-navigate {
+            display: inline-block;
+            padding: 10px 20px;
+            margin-top: 20px;
+            background-color: #13446a;
+            color: white;
+            border: none; 
+            border-radius: 5px;
+            text-decoration: none;
+            cursor: pointer;
+        }
+        .btn-navigate:hover {
+            background-color: #0366cf;
+        } 
+    </style> 
+</head>
+<body>
+    <div id="page-content">
+        <div class="left-title">RECURSOS HUMANOS </div>
+        
+        <div class="image-container2">
+            <img src="../img/ursoresult.png" alt="Iceberg com o urso mascote">
+        </div>
+
+        <div class="result2-container">
+            <div class="result2">
+                <div class="result2-header">
+                    <ul class="nav nav-tabs result2-header-tabs">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="true" href="#content1" onclick="showContent('content1')">Perfil</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#content2" onclick="showContent('content2')">Campo 1</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#content3" onclick="showContent('content3')">Campo 2</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="result2-body">
+                    <div id="content1" class="tab-content">
+                        <h5 class="result2-title">Construtor de talentos</h5>
+                        <p class="result2-text">Você é o tipo de pessoa que realmente se preocupa com o crescimento e o bem-estar de quem está ao seu redor. 
+                            Sempre disposto a ajudar, você tem um talento natural para motivar e inspirar os outros. Seja trabalhando em equipe ou em conversas individuais, 
+                            você consegue enxergar o que cada pessoa tem de melhor e sabe exatamente como apoiar para que elas atinjam seus objetivos.
+                            Sua forma de se comunicar, amigável e clara, faz com que as pessoas se sintam seguras para pedir sua orientação. </p>
+                    </div>
+                    <div id="content2" class="tab-content" style="display: none;">
+                        <h5 class="result2-title">Recurso Humanos</h5>
+                        <p class="result2-text">Seu curso mais compatível pode ser de Recurso Humanos, voltado para quem gosta de trabalhar com pessoas e entende a importância de um bom ambiente de trabalho. 
+                            No curso, você vai aprender sobre recrutamento, treinamento, motivação e gestão de equipes. As aulas incluem também a legislação trabalhista e como gerenciar conflitos. 
+                            O objetivo é formar profissionais capazes de cuidar do bem-estar dos funcionários e de melhorar a eficiência e o clima organizacional dentro das empresas. </p>  
+                    </div>
+                    <div id="content3" class="tab-content" style="display: none;">
+                        <h5 class="result2-title">Administração</h5>
+                        <p class="result2-text">Você também pode se identificar com o curso de Administração, esse curso é ideal para quem deseja entender como uma empresa funciona e quer aprender a 
+                            gerenciar negócios. O curso ensina sobre finanças, recursos humanos, marketing e planejamento estratégico. Você vai estudar como organizar, 
+                            liderar equipes e tomar decisões que façam a diferença no crescimento de uma empresa. 
+                            O objetivo é formar profissionais preparados para atuar em qualquer setor, seja administrando pequenas empresas ou grandes corporações. </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <a href="#" class="btn-navigate" onclick="alterarConteudo()">Conheça as áreas de atuação!</a>
+    </div>
+
+    <script>
+        function showContent(id) {
+            // Esconde todos os conteúdos
+            const contents = document.querySelectorAll('.tab-content');
+            contents.forEach(content => content.style.display = 'none');
+            
+            // Mostra o conteúdo selecionado
+            document.getElementById(id).style.display = 'block';
+        }
+
+        function alterarConteudo() {
+            const novoConteudo = `
+                <div class="left-block">
+                    <h2>Aqui está duas possíveis áreas que seu o curso dominante poderá atuar futuramente: </h2>
+                </div> 
+
+                <div class="content">
+                    <div class="result1">
+                        <img src="../img/coaching.png" alt="Imagem 1" class="result1-img-top">
+                        <div class="result1-body">
+                            <h3 class="result1-title">Coaching Corporativo</h3>
+                            <p class="result1-text">Pode ajudar líderes e equipes a desenvolverem suas habilidades de gestão, 
+                                comunicação e solução de problemas, buscando melhorar o desempenho e o ambiente de trabalho.</p>
+                        </div>
+                    </div>
+
+                    <div class="result1">
+                        <img src="../img/cultura.png" alt="Imagem 2" class="result1-img-top">
+                        <div class="result1-body">
+                            <h3 class="result1-title">Consultoria de Cultura Organizacional</h3>
+                            <p class="result1-text">Ajudam as empresas a construir uma cultura positiva, alinhando valores e práticas que 
+                                melhoram o clima entre os funcionários e aumentam a produtividade. </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Botão no canto inferior direito -->
+                <button class="btn-redirect" onclick="window.location.href='../resultado/vestibulinho.html'">Conheça o Vestibulinho!</button>
+            `;
+
+            // Atualiza o conteúdo da página
+            document.getElementById('page-content').innerHTML = novoConteudo;
+        }
+
+        document.querySelectorAll('.nav-link').forEach(link => {
+    link.addEventListener('click', function() {
+        // Remove a classe 'active' de todos os links
+        document.querySelectorAll('.nav-link').forEach(navLink => {
+            navLink.classList.remove('active');
+        });
+
+        // Adiciona a classe 'active' ao link clicado
+        this.classList.add('active');
+    });
+});
+
+    </script>
+     <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" type="image/png" href="img/Teste-vocacional.ico">
+    <title>Resultado 2</title>
+    <link rel="stylesheet" href="result.css">
+    <style>
+        /* Adicione estilos básicos para visualização */
+        body {
+            font-family: Arial, sans-serif;
+        }
+        .btn-navigate {
+            display: inline-block;
+            padding: 10px 20px;
+            margin-top: 20px;
+            background-color: #13446a;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            text-decoration: none;
+            cursor: pointer;
+        }
+        .btn-navigate:hover {
+            background-color: #0366cf;
+        } 
+    </style>
+</head>
+<body>
+    <div id="page-content">
+        <div class="left-title">ADMINISTRAÇÃO</div>
+        
+        <div class="image-container2">
+            <img src="../img/ursoresult.png" alt="Iceberg com o urso mascote">
+        </div>
+
+        <div class="result2-container">
+            <div class="result2">
+                <div class="result2-header">
+                    <ul class="nav nav-tabs result2-header-tabs">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="true" href="#content1" onclick="showContent('content1')">Perfil</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#content2" onclick="showContent('content2')">Campo 1</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#content3" onclick="showContent('content3')">Campo 2</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="result2-body">
+                    <div id="content1" class="tab-content">
+                        <h5 class="result2-title">Visionário Estratégico</h5>
+                        <p class="result2-text">Você é o tipo de estudante que gosta de pensar no futuro e guiar seus colegas para alcançar metas. 
+                            Tem uma habilidade natural para liderar, negociar e enxergar o "panorama geral" faz de você alguém que resolve problemas com facilidade e que os outros procuram em momentos decisivos. 
+                            Além disso, você é bom em se comunicar e convencer, conectando pessoas e ideias de forma eficiente, sempre buscando novas oportunidades e estratégias. </p>
+                    </div>
+                    <div id="content2" class="tab-content" style="display: none;">
+                        <h5 class="result2-title">Administração</h5>
+                        <p class="result2-text">Seu curso mais compatível é o de Administração, esse curso é ideal para quem deseja entender como uma empresa funciona e quer aprender a gerenciar negócios. 
+                            O curso ensina sobre finanças, recursos humanos, marketing e planejamento estratégico. Você vai estudar como organizar, liderar equipes e tomar decisões que façam a diferença no crescimento de uma empresa. 
+                            O objetivo é formar profissionais preparados para atuar em qualquer setor, seja administrando pequenas empresas ou grandes corporações. </p>  
+                    </div>
+                    <div id="content3" class="tab-content" style="display: none;">
+                        <h5 class="result2-title">Comércio Exterior</h5>
+                        <p class="result2-text">Você também pode se identificar com o curso de Comércio Exterior, nele é abordado como as empresas lidam com importações e exportações, e como negociar com outros países. 
+                            Você vai aprender sobre economia global, logística, direito internacional e diferentes culturas. 
+                            O objetivo é formar profissionais capazes de atuar em um mercado globalizado, ajudando empresas a expandir seus negócios pelo mundo. </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <a href="#" class="btn-navigate" onclick="alterarConteudo()">Conheça as áreas de atuação!</a>
+    </div>
+
+    <script>
+        function showContent(id) {
+            // Esconde todos os conteúdos
+            const contents = document.querySelectorAll('.tab-content');
+            contents.forEach(content => content.style.display = 'none');
+            
+            // Mostra o conteúdo selecionado
+            document.getElementById(id).style.display = 'block';
+        }
+
+        function alterarConteudo() {
+            const novoConteudo = `
+                <div class="left-block">
+                    <h2>Aqui está duas possíveis áreas que seu o curso dominante poderá atuar futuramente: </h2>
+                </div> 
+ 
+                <div class="content">
+                    <div class="result1">
+                        <img src="../img/empreend.png" alt="Imagem 1" class="result1-img-top">
+                        <div class="result1-body">
+                            <h3 class="result1-title">Empreendedorismo</h3>
+                            <p class="result1-text">Podem criar seus próprios negócios, identificando oportunidades para oferecer novos produtos ou serviços. 
+                                Eles planejam e organizam tudo, assumindo os riscos e buscando soluções para crescer no mercado. </p>
+                        </div>
+                    </div>
+
+                    <div class="result1">
+                        <img src="../img/consul.png" alt="Imagem 2" class="result1-img-top">
+                        <div class="result1-body">
+                            <h3 class="result1-title">Consultoria Empresarial</h3>
+                            <p class="result1-text">Atuam ajudando empresas a melhorar suas operações, dando conselhos especializados em áreas como gestão, finanças e marketing. 
+                                Eles analisam como a empresa funciona e sugerem mudanças para torná-la mais eficiente. </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Botão no canto inferior direito -->
+                <button class="btn-redirect" onclick="window.location.href='../resultado/vestibulinho.html'">Conheça o Vestibulinho!</button>
+            `;
+
+            // Atualiza o conteúdo da página
+            document.getElementById('page-content').innerHTML = novoConteudo;
+        }
+
+        document.querySelectorAll('.nav-link').forEach(link => {
+    link.addEventListener('click', function() {
+        // Remove a classe 'active' de todos os links
+        document.querySelectorAll('.nav-link').forEach(navLink => {
+            navLink.classList.remove('active');
+        });
+
+        // Adiciona a classe 'active' ao link clicado
+        this.classList.add('active');
+    });
+});
+
+    </script>
+
+    <script src="script.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" type="image/png" href="../img/Teste-vocacional.ico">
+    <title>Teste Vocacional</title>
+    <link rel="stylesheet" href="style.css"> 
+</head>
+<body class="bodyQuest">   
+     <div id="content">
+        <!-- O conteúdo da pergunta será inserido pelo JavaScript -->
+    </div>
+
+    <script>
+        // Função para zerar todas as pontuações no localStorage
+        function zerarPontuacoes() {
+            localStorage.removeItem('pontuacao2');
+            localStorage.removeItem('pontuacao2_pagina_atual');
+        }
+
+        // Função para carregar a página inicial
+        function carregarPaginaInicial() {
+            zerarPontuacoes(); // Zera as pontuações ao carregar a página
+
+            // Define o conteúdo inicial da página
+            document.getElementById('content').innerHTML = `
+            <div class="container">
+                <div class="card2">
+                    <img src="../imgCardPerg/fundoPerg1_grp1.png" alt="Descrição da Imagem" class="card-img">
+                    <h3><p class="card2-question">Se você pudesse escolher uma aventura para vivenciar, qual seria?</p></h3>
+                </div>
+                <div class="inputs2">
+                    <button class="input alternativa-btn" onclick="registrarResposta('INFO'); proximaPergunta(1)">Ser teletransportado para um universo virtual.</button>
+                    <button class="input alternativa-btn" onclick="registrarResposta('MKT'); proximaPergunta(1)">Anunciar um produto mágico que pode realizar qualquer desejo.</button>
+                     <button class="input alternativa-btn" onclick="registrarResposta('INFO'); proximaPergunta(1)">Hackear um sistema alienígena para descobrir a origem da vida no universo.</button>
+                    <button class="input alternativa-btn" onclick="registrarResposta('MKT'); proximaPergunta(1)">Produzir um traje que muda sua aparência conforme seu pensamento.</button>
+                </div>
+                </div>
+            `;
+        }
+
+        // Carrega a página inicial quando o script é carregado
+        carregarPaginaInicial();
+
+        // Carrega pontuação existente ou inicializa com valores do Local Storage
+        let pontuacao2 = JSON.parse(localStorage.getItem('pontuacao2')) || {
+            INFO: 0,
+            MKT: 0
+        };
+
+        // Função para registrar a resposta e atualizar pontuação
+        function registrarResposta(resposta) {
+            pontuacao2[resposta]++;
+            localStorage.setItem('pontuacao2', JSON.stringify(pontuacao2));
+            console.log('Pontos Atualizados:', pontuacao2);
+        }
+
+        // Função para exibir a próxima pergunta
+        function proximaPergunta(pergunta) {
+            // Salva a pontuação da página atual no localStorage
+            localStorage.setItem('pontuacao2_pagina_atual', JSON.stringify(pontuacao2));
+
+            let nextContent = '';
+
+            if (pergunta === 1) {
+                nextContent = `
+                <div class="container">
+                    <div class="card2">
+                        <img src="../imgCardPerg/fundoPerg2_grp1.png" alt="Descrição da Imagem" class="card-img">
+                        <h3><p class="card2-question">Qual dessas empresas você gostaria de criar?</p></h3>
+                    </div>
+                    <div class="inputs2">
+                        <button class="input alternativa-btn" onclick="registrarResposta('INFO'); proximaPergunta(2)">Uma empresa de desenvolvimento de realidade virtual.</button>
+                        <button class="input alternativa-btn" onclick="registrarResposta('MKT'); proximaPergunta(2)">Uma plataforma de engajamento para pequenas marcas de moda.</button>
+                        <button class="input alternativa-btn" onclick="registrarResposta('INFO'); proximaPergunta(2)">Uma empresa de criação de robôs de segurança.</button>
+                        <button class="input alternativa-btn" onclick="registrarResposta('MKT'); proximaPergunta(2)">Uma agência de viagens espacial.</button>
+                    </div>
+                    </div>
+                `;
+            } else if (pergunta === 2) {
+                nextContent = `
+                <div class="container">
+                    <div class="card2">
+                        <img src="../imgCardPerg/fundoPerg3_grp1.png" alt="Descrição da Imagem" class="card-img">
+                        <h3><p class="card2-question">Qual dessas frases mais te identifica?</p></h3>
+                    </div>
+                    <div class="inputs2">
+                        <button class="input alternativa-btn" onclick="registrarResposta('INFO'); proximaPergunta(3)">"A tecnologia tem o poder de mudar o mundo."</button>
+                        <button class="input alternativa-btn" onclick="registrarResposta('MKT'); proximaPergunta(3)">"A criatividade é a inteligência se divertindo."</button>
+                        <button class="input alternativa-btn" onclick="registrarResposta('INFO'); proximaPergunta(3)">"A curiosidade é a primeira etapa da descoberta."</button>
+                        <button class="input alternativa-btn" onclick="registrarResposta('MKT'); proximaPergunta(3)">"A marca é uma promessa."</button>
+                    </div>
+                    </div>
+                `;
+            } else if (pergunta === 3) {
+                verificarpontuacao(); // Redireciona para a página final
+                return; // Para evitar sobrescrever o conteúdo após o redirecionamento
+            }
+
+            document.getElementById('content').innerHTML = nextContent;
+        }
+
+        // Função para verificar a pontuação final e redirecionar
+            function verificarpontuacao() {
+    // Salva a pontuação final no localStorage (já está sendo salvo nas funções anteriores)
+    localStorage.setItem('pontuacao2', JSON.stringify(pontuacao2));
+
+    // Redireciona para a página desejada
+    window.location.href = '../fruit2/fruitNinja.html'; // Substitua pelo URL correto
+
+        }
+    </script>
+</body>
+</html>

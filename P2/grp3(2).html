@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" type="image/png" href="../img/Teste-vocacional.ico">
+    <title>Teste Vocacional</title>
+    <link rel="stylesheet" href="style.css"> 
+</head>
+<body class="bodyQuest">    <div id="content">
+        <div class='container'>
+        <div class="card2">
+            <img src="../imgCardPerg/fundoPerg1_grp2.png" alt="Descrição da Imagem" class="card-img">
+            <h3><p class="card2-question">Se você pudesse criar um novo feriado, qual seria e como ele seria celebrado?</p></h3>
+        </div>
+        <div class="inputs2">
+            <button class="input alternativa-btn" onclick="registrarResposta('SEGTRAB'); proximaPergunta(4)"><strong>Dia do Super-Herói da Segurança</strong>: competição de cosplay de super-heróis da segurança.</button>
+            <button class="input alternativa-btn" onclick="registrarResposta('JURID'); proximaPergunta(4)"><strong>Dia da Lei do Absurdo</strong>: competição para criar leis absurdas e divertidas.</button>
+            <button class="input alternativa-btn" onclick="registrarResposta('SEGTRAB'); proximaPergunta(4)"><strong>Dia da Segurança Ninja</strong>: gincana com desafios de segurança e identificação de riscos.</button>
+            <button class="input alternativa-btn" onclick="registrarResposta('JURID'); proximaPergunta(4)"><strong>Dia da Justiça Social Rock</strong>: festival de música com entrada mediante doação de alimento não perecível.</button>
+        </div>
+        <div>
+    </div>
+    
+    <script>
+        // Carrega pontuação existente ou inicializa com valores do Local Storage
+        let pontuacao3 = JSON.parse(localStorage.getItem('pontuacao3')) || {
+            SEGTRAB: 0,
+            JURID: 0
+        };
+
+        // Função para registrar a resposta e atualizar pontuação
+        function registrarResposta(resposta) {
+            pontuacao3[resposta]++;
+            localStorage.setItem('pontuacao3', JSON.stringify(pontuacao3));
+            console.log('Pontos Atualizados:', pontuacao3);
+        }
+
+        // Função para exibir a próxima pergunta
+        function proximaPergunta(pergunta) {
+            // Salva a pontuação da página atual no localStorage
+            localStorage.setItem('pontuacao_pagina_atual', JSON.stringify(pontuacao3));
+
+            let nextContent = '';
+
+            if (pergunta === 4) {
+                nextContent = `
+<div id="content">
+        <div class='container'>
+        <div class="card2">
+            <img src="../imgCardPerg/fundoPerg2_grp2.png" alt="Descrição da Imagem" class="card-img">
+            <h3><p class="card2-question">No mundo mágico dos sonhos, seu desafio é criar algo nunca visto. O que você inventaria?</p></h3>
+        </div>
+        <div class="inputs2">
+            <button class="input alternativa-btn" onclick="registrarResposta('SEGTRAB'); proximaPergunta(5)">Um campo de força invisível e seguro.</button>
+            <button class="input alternativa-btn" onclick="registrarResposta('JURID'); proximaPergunta(5)">Biblioteca virtual que contém todos os livros ja escritos.</button>
+            <button class="input alternativa-btn" onclick="registrarResposta('SEGTRAB'); proximaPergunta(5)">Simulador de Riscos, treinando como reagir em cada situação</button>
+            <button class="input alternativa-btn" onclick="registrarResposta('JURID'); proximaPergunta(5)">Detector de Mentiras, acabando com a mentira do mundo</button>
+        </div>
+        <div>
+    </div>
+                `;
+            } else if (pergunta === 5) {
+                nextContent = `
+                    <div class="card">
+            <img src="../imgCardPerg/fundoPerg3_grp2.png" alt="Descrição da Imagem" class="card-img">
+            <h3><p class="card-question">Se pudesse escolher um personagem de filme ou série para te representar na sua carreira, quem seria?</p></h3>
+        </div>
+    
+        <div class="answers-container">
+            <div class="input4 alternativa-btn" id="botao-0" onclick="registrarResposta('SEGTRAB'); proximaPergunta(6)">
+                <img src="./grp1IMG/capita.png" alt="Imagem 1">
+                <span class="input4 alternativa-btn-text">Capitã Marvel</span>
+            </div>
+            <div class="input4 alternativa-btn" id="botao-0" onclick="registrarResposta('JURID'); proximaPergunta(6)">
+                <img src="./grp1IMG/sherloc.png" alt="Imagem 2">
+                <span class="input4 alternativa-btn-text">Sherlock Holmes</span>
+            </div>
+            <div class="input4 alternativa-btn" id="botao-0" onclick="registrarResposta('SEGTRAB'); proximaPergunta(6)">
+                <img src="./grp1IMG/james.png" alt="Imagem 3">
+                <span class="input4 alternativa-btn-text">James Bond</span>
+            </div>
+            <div class="input4 alternativa-btn" id="botao-0" onclick="registrarResposta('JURID'); proximaPergunta(6)">
+                <img src="./grp1IMG/shihu.png" alt="Imagem 4">
+                <span class="input4 alternativa-btn-text">She-Hulk</span>
+            </div>
+        </div>
+                `;
+            } else if (pergunta === 6) {
+                nextContent = `
+                    <div class="card">
+            <img src="../imgCardPerg/fundoPerg4_grp2.png" alt="Descrição da Imagem" class="card-img">
+            <h3><p class="card-question">Se você pudesse ter um animal de estimação mágico, qual seria e quais poderes ele teria?</p></h3>
+        </div>
+    
+        <div class="answers5-container">
+            <div class="input5 alternativa-btn" id="botao-0" onclick="registrarResposta('SEGTRAB'); proximaPergunta(7)">
+                <img src="./grp1IMG/minotauro.png" alt="Imagem 1">
+                <span class="input4 alternativa-btn-text">Um minotauro com sentidos aguçados e força sobre-humana.</span>
+            </div>
+            <div class="input5 alternativa-btn" id="botao-0" onclick="registrarResposta('JURID'); proximaPergunta(7)">
+                <img src="./grp1IMG/fenix.png" alt="Imagem 2">
+                <span class="input4 alternativa-btn-text">Uma fênix que, ao renascer, traz consigo a verdade e a justiça.</span>
+            </div>
+            <div class="input5 alternativa-btn" id="botao-0" onclick="registrarResposta('SEGTRAB'); proximaPergunta(7)">
+                <img src="./grp1IMG/hidra.png" alt="Imagem 3">
+                <span class="input4 alternativa-btn-text">Hidra Protetora de várias cabeças que te protegeria de qualquer perigo.</span>
+            </div>
+            <div class="input5 alternativa-btn" id="botao-0" onclick="registrarResposta('JURID'); proximaPergunta(7)">
+                <img src="./grp1IMG/basi.png" alt="Imagem 4">
+                <span class="input4 alternativa-btn-text">Basilisco da Verdade, se uma pessoa mentir ela é petrificada para sempre.</span>
+            </div>
+        </div>
+                `;
+            } else if (pergunta === 7) {
+                verificarPontuacao(); // Redireciona para a página final
+                return; // Para evitar sobrescrever o conteúdo após o redirecionamento
+            }
+
+            document.getElementById('content').innerHTML = nextContent;
+        }
+
+        // Função para verificar a pontuação final e redirecionar
+        function verificarPontuacao() {
+            // Salva a pontuação final no localStorage (já está sendo salvo nas funções anteriores)
+            localStorage.setItem('pontuacao3', JSON.stringify(pontuacao3));
+
+            // Compara as pontuações e redireciona para a página apropriada
+            if (pontuacao3.SEGTRAB > pontuacao3.JURID) {
+                window.location.href = '../resultado/resultSEGTRAB.html'; // Substitua pelo URL correto
+            } else {
+                window.location.href = '../resultado/resultJURID.html'; // Substitua pelo URL correto
+            }
+        }
+    </script>
+</body>
+</html>

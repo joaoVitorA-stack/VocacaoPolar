@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" type="image/png" href="../img/Teste-vocacional.ico">
+    <title>Teste Vocacional</title>
+    <link rel="stylesheet" href="style.css"> 
+</head>
+<body class="bodyQuest">    <div id="content">
+        <div class="container">
+        <div class="card2">
+            <img src="../imgCardPerg/fundoPerg1_grp2.png" alt="Descrição da Imagem" class="card-img">
+            <h3><p class="card2-question">Se você pudesse criar um novo feriado, qual seria e como ele seria celebrado?</p></h3>
+        </div>
+        <div class="inputs2">
+            <button class="input alternativa-btn" onclick="registrarResposta('RH'); proximaPergunta(4)"><strong>Dia do Feedback</strong> em que funcionários entrevistam o chefe.</button> 
+            <button class="input alternativa-btn" onclick="registrarResposta('ADM'); proximaPergunta(4)"><strong>Dia Mundial da Quebra de Regras</strong> Questionar normas sociais e explorar novas abordagens</button>
+            <button class="input alternativa-btn" onclick="registrarResposta('RH'); proximaPergunta(4)"><strong>Dia Internacional do Abraço Apertado</strong> Espalha positividade e carinho.</button>
+            <button class="input alternativa-btn" onclick="registrarResposta('ADM'); proximaPergunta(4)"><strong>Dia Mundial do Silêncio</strong> refletir, meditar e apreciar a paz.</button>
+        </div>
+    </div>
+</div>
+    <script>
+        // Carrega pontuação existente ou inicializa com valores do Local Storage
+        let pontuacao4 = JSON.parse(localStorage.getItem('pontuacao4')) || {
+            RH: 0,
+            ADM: 0
+        };
+
+        // Função para registrar a resposta e atualizar pontuação
+        function registrarResposta(resposta) {
+            pontuacao4[resposta]++;
+            localStorage.setItem('pontuacao4', JSON.stringify(pontuacao4));
+            console.log('Pontos Atualizados:', pontuacao4);
+        }
+
+        // Função para exibir a próxima pergunta
+        function proximaPergunta(pergunta) {
+            // Salva a pontuação da página atual no localStorage
+            localStorage.setItem('pontuacao_pagina_atual', JSON.stringify(pontuacao4));
+
+            let nextContent = '';
+
+
+
+
+            if (pergunta === 4) {
+                nextContent = `
+                        <div id="content">
+        <div class="container">
+        <div class="card2">
+            <img src="../imgCardPerg/fundoPerg2_grp2.png" alt="Descrição da Imagem" class="card-img">
+            <h3><p class="card2-question">No mundo mágico dos sonhos, seu desafio é criar algo nunca visto. O que você inventaria?</p></h3>
+        </div>
+        <div class="inputs2">
+            <button class="input alternativa-btn" onclick="registrarResposta('RH'); proximaPergunta(5)">Espelho mágico que revela o potencial de cada pessoa.</button> 
+            <button class="input alternativa-btn" onclick="registrarResposta('ADM'); proximaPergunta(5)">Sonhoteca: biblioteca mental para armazenar, compartilhar e explorar sonhos.</button>
+            <button class="input alternativa-btn" onclick="registrarResposta('RH'); proximaPergunta(5)">Fábrica de Sonhos, um lugar onde a gente poderia criar experiências personalizadas para cada pessoa.</button>
+            <button class="input alternativa-btn" onclick="registrarResposta('ADM'); proximaPergunta(5)">Fábrica de Emoções, um lugar onde você pudesse criar e personalizar suas próprias emoções.</button>
+        </div>
+    </div>
+                `;
+            } else if (pergunta === 5) {
+                nextContent = `
+                    <div class="card">
+            <img src="../imgCardPerg/fundoPerg3_grp2.png" alt="Descrição da Imagem" class="card-img">
+            <h3><p class="card-question">Se você pudesse escolher um personagem de filme ou série para te representar na sua carreira, quem seria?</p></h3>
+        </div>
+    
+        <div class="answers-container">
+            <div class="input4 alternativa-btn" id="botao-0" onclick="registrarResposta('RH'); proximaPergunta(6)">
+                <img src="./grp1IMG/xavier.png" alt="Imagem 1">
+                <span class="input4 alternativa-btn-text">Professor Xavier</span>
+            </div>
+            <div class="input4 alternativa-btn" id="botao-0" onclick="registrarResposta('ADM'); proximaPergunta(6)">
+                <img src="./grp1IMG/capit.png" alt="Imagem 2">
+                <span class="input4 alternativa-btn-text">Capitão América</span>
+            </div>
+            <div class="input4 alternativa-btn" id="botao-0" onclick="registrarResposta('RH'); proximaPergunta(6)">
+                <img src="./grp1IMG/super.png" alt="Imagem 3">
+                <span class="input4 alternativa-btn-text">SuperMan</span>
+            </div>
+            <div class="input4 alternativa-btn" id="botao-0" onclick="registrarResposta('ADM'); proximaPergunta(6)">
+                <img src="./grp1IMG/verde.png" alt="Imagem 4">
+                <span class="input4 alternativa-btn-text">Lanterna Verde</span>
+            </div>
+        </div>
+                `;
+            } else if (pergunta === 6) {
+                nextContent = `
+                    <div class="card">
+            <img src="../imgCardPerg/fundoPerg4_grp2.png" alt="Descrição da Imagem" class="card-img">
+            <h3><p class="card-question">Se você pudesse ter um animal de estimação mágico, qual seria e quais poderes ele teria?</p></h3>
+        </div>
+    
+        <div class="answers5-container">
+            <div class="input5 alternativa-btn" id="botao-0" onclick="registrarResposta('RH'); proximaPergunta(7)">
+                <img src="./grp1IMG/gaviao2.png" alt="Imagem 1">
+                <span class="input4 alternativa-btn-text">Um grifo celestial que traria a paz independente da situação.</span>
+            </div>
+            <div class="input5 alternativa-btn" id="botao-0" onclick="registrarResposta('ADM'); proximaPergunta(7)">
+                <img src="./grp1IMG/coruja.png" alt="Imagem 2">
+                <span class="input4 alternativa-btn-text">Coruja ancestral com poder de ler mentes.</span>
+            </div>
+            <div class="input5 alternativa-btn" id="botao-0" onclick="registrarResposta('RH'); proximaPergunta(7)">
+                <img src="./grp1IMG/esfing.png" alt="Imagem 3">
+                <span class="input4 alternativa-btn-text">Esfinge dos Talentos, identifica potencialidades de indivíduos.</span>
+            </div>
+            <div class="input5 alternativa-btn" id="botao-0" onclick="registrarResposta('ADM'); proximaPergunta(7)">
+                <img src="./grp1IMG/dragao.png" alt="Imagem 4">
+                <span class="input4 alternativa-btn-text">Dragão Dourado que pode prever o futuro.</span>
+            </div>
+        </div>
+                `;
+            } else if (pergunta === 7) {
+                verificarPontuacao(); // Redireciona para a página final
+                return; // Para evitar sobrescrever o conteúdo após o redirecionamento
+            }
+
+            document.getElementById('content').innerHTML = nextContent;
+        }
+
+        // Função para verificar a pontuação final e redirecionar
+        function verificarPontuacao() {
+            // Salva a pontuação final no localStorage (já está sendo salvo nas funções anteriores)
+            localStorage.setItem('pontuacao4', JSON.stringify(pontuacao4));
+
+            // Compara as pontuações e redireciona para a página apropriada
+            if (pontuacao4.RH > pontuacao4.ADM) {
+                window.location.href = '../resultado/resultRH.html'; // Substitua pelo URL correto
+            } else {
+                window.location.href = '../resultado/resultADM2.html'; // Substitua pelo URL correto
+            }
+        }
+    </script>
+</body>
+</html>

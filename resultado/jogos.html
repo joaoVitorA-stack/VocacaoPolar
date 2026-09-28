@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" type="image/png" href="./img/Teste-vocacional.ico">
+    <title>Relaxe...</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #071b8a, #0f105c);
+            overflow: hidden;
+            margin: 0;
+            position: relative;
+        }
+        .game-icon {
+    position: absolute;
+    font-size: 30px; /* Aumentando o tamanho dos ícones */
+    animation: fall linear forwards;
+    z-index: 0; /* Alterado para 0 */
+}
+        @keyframes fall {
+            0% {
+                top: -50px;
+                opacity: 1;
+            }
+            100% {
+                top: 100vh;
+                opacity: 0;
+            }
+        }
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            flex-direction: row;
+        }
+      
+
+.card {
+    background: rgba(255, 255, 255, 0.9);
+    border: 1px solid #ddd;
+    border-radius: 12px;
+    width: 400px;
+    text-align: center;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    transition: transform 0.2s, box-shadow 0.2s;
+    text-decoration: none;
+    position: relative;
+    overflow: hidden;
+    margin: 20px;
+    z-index: 1; /* Aumentado para 1 */
+}
+        .card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 40px rgba(0, 0, 0, 0.3);
+        }
+        .card img {
+            width: 100%;
+            border-top-left-radius: 12px;
+            border-top-right-radius: 12px;
+            filter: brightness(0.9);
+        }
+        .card-title {
+            padding: 15px 0;
+            font-size: 1.2em;
+            font-weight: bold;
+            color: #2c3e50;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+            background-color: rgba(236, 240, 241, 0.8);
+            border-radius: 5px;
+            margin: 10px; /* Margem superior e inferior */
+        }
+
+        .styled-button {
+    background-color: #ffffff; /* Cor de fundo */
+    color: rgb(0, 0, 0); /* Cor do texto */
+    padding: 20px 30px; /* Espaçamento interno */
+    border-radius: 5px; /* Bordas arredondadas */
+    text-decoration: none; /* Remove o sublinhado */
+    font-size: 1.2em; /* Tamanho da fonte */
+   position: fixed;
+   bottom: 0;
+   font-weight: bold;
+   margin: 20px;
+}
+
+.styled-button:hover {
+    background-color: #2980b9; /* Cor de fundo ao passar o mouse */
+    transform: scale(1.05); /* Efeito de crescimento ao passar o mouse */
+}
+        
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <a href="./memory/index.html" class="card">
+        <img src="./jogos/memory.png" alt="Card 1">
+        <div class="card-title">JOGO DA MEMÓRIA</div>
+    </a>
+    <a href="./stick/index.html" class="card">
+        <img src="./jogos/stick.PNG" alt="Card 2">
+        <div class="card-title">STICK</div>
+    </a>
+    <a href="./fruit-main/fruitNinja.html" class="card">
+        <img src="./jogos/ninja.png" alt="Card 3">
+        <div class="card-title">BLOCK NINJA</div>
+    </a>
+</div>
+    
+<a href="../index.html" class="styled-button">HOME</a>
+<script>
+    const icons = ['🎮', '🕹️', '🎲', '🎯', '🧩','👾', '🏆', '⚔️', '🛡️']; // Ícones de jogos
+    const container = document.body;
+
+    function createIcon() {
+        const icon = document.createElement('div');
+        icon.classList.add('game-icon');
+        icon.textContent = icons[Math.floor(Math.random() * icons.length)];
+        icon.style.left = Math.random() * 100 + 'vw'; // Posição horizontal aleatória
+        icon.style.animationDuration = Math.random() * 3 + 2 + 's'; // Duração aleatória entre 2s e 5s
+        container.appendChild(icon);
+
+        // Remove o ícone após a animação
+        setTimeout(() => {
+            icon.remove();
+        }, 7000); // Tempo total da animação (5s)
+    }
+
+    setInterval(createIcon, 400); // Cria um novo ícone a cada 500ms
+</script>
+
+</body>
+</html>
