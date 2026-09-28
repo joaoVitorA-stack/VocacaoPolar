@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" type="image/png" href="img/Teste-vocacional.ico">
+    <link rel="stylesheet" href="style.css">
+    
+    <link rel="stylesheet" href="https://fontawesome.com/icons/chevron-left?f=classic&s=solid"> 
+    <title>Vocação Polar - Descongele seu futuro! </title>
+</head>
+<body>
+    <header>
+      <div class="img">
+        <a href="index.html">  <img src="img/logo.png"  alt="Logo Urso com a lapela" class="imgLogo"></a>
+      </div>
+    
+        <nav id="nav-bar">
+            <ul>
+                <li><a href="index.html">INÍCIO</a></li>
+                <li><a href="descricao.html" >DESCRIÇÃO</a></li>
+                <li><a href="cursos.html" >CURSOS</a></li>
+            </ul>
+        </nav>
+    
+        <div class="btn1">
+          <img src="img/acess.png" alt="Botão de Acessibilidade" class="imgAcess">  
+      </div>
+    
+    </header>
+
+
+
+    <main class="mainCursos">
+       
+        <div class="carrosel-cursos">
+         <h2>Conheça um pouco dos cursos disponíveis na Etec DPM!</h2>
+        <section>
+            <div id="cCarousel">
+              <div class="arrow" id="prev"> < </div>
+              <div class="arrow" id="next"> > </div>  
+          
+              <div id="carousel-vp">
+                <div id="cCarousel-inner">
+          
+                  <article class="cCarousel-item">
+                    <img src="img/adm.png" alt="Ícone de Administração">
+                    <div class="infos">
+                      <h3>Administração</h3>
+                      
+                      <p>Ensina gestão de empresas, incluindo finanças, marketing, logística, recursos humanos  e empreendedorismo.</p>
+                    </div>
+                  </article>
+          
+                  <article class="cCarousel-item">
+                    <img src="img/comex.png" alt="Ícone de Comércio Exterior">
+                    <div class="infos">
+                      <h3>Comércio Exterior</h3>
+                      <p>Tem como foco as negociações internacionais, importação/exportação e logística global.</p>
+                    </div>
+                  </article>
+          
+                  <article class="cCarousel-item">
+                    <img src="img/info.png" alt="Ícone de Informática para Internet">
+                    <div class="infos">
+                      <h3>Informática para Internet</h3>
+                      <p>Tem foco no desenvolvimento de sites, aplicativos e soluções web, além da programação e segurança na web.</p>
+                    </div>
+                  </article>
+          
+                  <article class="cCarousel-item">
+                    <img src="img/mark.png" alt="Ícone de Marketing">
+                    <div class="infos">
+                      <h3>Marketing</h3>
+                      <p>Ensina estratégias de vendas, análise de mercado e promoção de marcas, atraindo e fidelizando clientes.</p>
+                    </div>
+                  </article>
+          
+                  <article class="cCarousel-item">
+                    <img src="img/rh.png" alt="Ícone de Recursos Humanos">
+                    <div class="infos">
+                      <h3>Recursos Humanos</h3>
+                      <p>Prepara para gerenciar pessoas, recrutamento, desenvolvimento de equipes e relações trabalhistas.</p>
+                    </div>
+                  </article>
+          
+                  <article class="cCarousel-item">
+                    <img src="img/st.png" alt="Ícone de Segurança do Trabalho">
+                    <div class="infos">
+                      <h3>Segurança do Trabalho</h3>
+                      <p>Ensina a prevenir acidentes e promover a segurança no ambiente laboral.</p>
+                    </div>
+                  </article>
+                  <article class="cCarousel-item">
+                    <img src="img/sj.png" alt="Ícone de Serviços Jurídicos">
+                    <div class="infos">
+                      <h3>Serviços Jurídicos</h3>
+                      <p>Ensina como atuar com processos e suporte técnico em atividades jurídicas, auxiliando advogados.</p>
+                    </div>
+                  </article>
+                </div>
+              </div>
+            </div>
+          </section>
+    </main>
+</div>
+
+<div class="image-footer-cursos">
+        <img src="img/footer_cursos.png " alt="Neve com iglu ao canto inferior esquerdo" width="100%">
+    </div>
+
+<script>
+    const prev = document.querySelector("#prev");
+const next = document.querySelector("#next");
+
+let carouselVp = document.querySelector("#carousel-vp");
+
+let cCarouselInner = document.querySelector("#cCarousel-inner");
+let carouselInnerWidth = cCarouselInner.getBoundingClientRect().width;
+
+let leftValue = 0;
+
+// Variable used to set the carousel movement value (card's width + gap)
+const totalMovementSize =
+  parseFloat(
+    document.querySelector(".cCarousel-item").getBoundingClientRect().width,
+    10
+  ) +
+  parseFloat(
+    window.getComputedStyle(cCarouselInner).getPropertyValue("gap"),
+    10
+  );
+
+prev.addEventListener("click", () => {
+  if (!leftValue == 0) {
+    leftValue -= -totalMovementSize;
+    cCarouselInner.style.left = leftValue + "px";
+  }
+});
+
+next.addEventListener("click", () => {
+  const carouselVpWidth = carouselVp.getBoundingClientRect().width;
+  if (carouselInnerWidth - Math.abs(leftValue) > carouselVpWidth) {
+    leftValue -= totalMovementSize;
+    cCarouselInner.style.left = leftValue + "px";
+  }
+});
+
+const mediaQuery510 = window.matchMedia("(max-width: 510px)");
+const mediaQuery770 = window.matchMedia("(max-width: 770px)");
+
+mediaQuery510.addEventListener("change", mediaManagement);
+mediaQuery770.addEventListener("change", mediaManagement);
+
+let oldViewportWidth = window.innerWidth;
+
+function mediaManagement() {
+  const newViewportWidth = window.innerWidth;
+
+  if (leftValue <= -totalMovementSize && oldViewportWidth < newViewportWidth) {
+    leftValue += totalMovementSize;
+    cCarouselInner.style.left = leftValue + "px";
+    oldViewportWidth = newViewportWidth;
+  } else if (
+    leftValue <= -totalMovementSize &&
+    oldViewportWidth > newViewportWidth
+  ) {
+    leftValue -= totalMovementSize;
+    cCarouselInner.style.left = leftValue + "px";
+    oldViewportWidth = newViewportWidth;
+  }
+}
+
+</script>
+</body>
+</html>

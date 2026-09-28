@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" type="image/png" href="../img/Teste-vocacional.ico">
+    <title>Teste Vocacional</title>
+    <link rel="stylesheet" href="style.css"> 
+</head>
+<body class="bodyQuest">
+    <div id="content">
+        
+        <div class="card">
+            <img src="imgCardPerg/fundoPerg5.png" alt="Descrição da Imagem" class="card-img">
+            <h3><p class="card-question">Em um mundo onde você pudesse viver dentro de um jogo, qual desses seria sua escolha?</p></h3>
+        </div>
+    
+        <div class="answers-container">
+            <div class="input4 alternativa-btn" id="botao-0" onclick="registrarResposta('GRP1'); proximaPergunta(5)">
+                <img src="imgperg/skyrim.png" alt="Imagem 1">
+                <span class="input4 alternativa-btn-text">Skyrim</span>
+            </div>
+            <div class="input4 alternativa-btn" id="botao-0" onclick="registrarResposta('GRP2'); proximaPergunta(5)">
+                <img src="imgperg/mine.png" alt="Imagem 2">
+                <span class="input4 alternativa-btn-text">Minecraft</span>
+            </div>
+            <div class="input4 alternativa-btn" id="botao-0" onclick="registrarResposta('GRP3'); proximaPergunta(5)">
+                <img src="imgperg/baticon.png" alt="Imagem 3">
+                <span class="input4 alternativa-btn-text">Batman: Arkham</span>
+            </div>
+            <div class="input4 alternativa-btn" id="botao-0" onclick="registrarResposta('GRP4'); proximaPergunta(5)">
+                <img src="imgperg/detroid.png" alt="Imagem 4">
+                <span class="input4 alternativa-btn-text">Detroit B. Human</span>
+            </div>
+        </div>
+
+    <script>
+        // Carrega pontuação existente ou inicializa com valores do Local Storage
+        let pontuacao = JSON.parse(localStorage.getItem('pontuacao')) || {
+            GRP1: 0,
+            GRP2: 0,
+            GRP3: 0,
+            GRP4: 0
+        };
+
+        // Função para registrar a resposta e atualizar pontuação
+        function registrarResposta(resposta) {
+    pontuacao[resposta]++;
+    localStorage.setItem('pontuacao', JSON.stringify(pontuacao));
+    console.log('Pontos Atualizados:', pontuacao);
+}
+
+        // Função para exibir a próxima pergunta da segunda página
+        function proximaPergunta(pergunta) {
+    // Salva a pontuação da página atual no localStorage
+    localStorage.setItem('pontuacao_pagina_atual', JSON.stringify(pontuacao));
+
+    if (pergunta === 5) {
+        // Atualiza para a Pergunta 6
+        document.getElementById('content').innerHTML = `
+            <div id="content">
+             <div class="card">
+            <img src="imgCardPerg/fundoPerg6.png" alt="Descrição da Imagem" class="card-img">
+            <h3><p class="card-question">Um misterioso laboratório de pesquisa te oferece um investimento ilimitado para desenvolver algo que revolucione o mundo. O que você criaria?</p></h3>
+        </div>
+    
+        <div class="answers-container">
+            <div class="input4 alternativa-btn" id="botao-0" onclick="registrarResposta('GRP1'); proximaPergunta(6)">
+                <img src="ImgQuest/maqTemp.png" alt="Imagem 1">
+                <span class="input4 alternativa-btn-text">Máquina do tempo</span>
+            </div>
+            <div class="input4 alternativa-btn" id="botao-0" onclick="registrarResposta('GRP2'); proximaPergunta(6)">
+                <img src="ImgQuest/realidadeVir.png" alt="Imagem 2">
+                <span class="input4 alternativa-btn-text">Realidade virtual</span>
+            </div>
+            <div class="input4 alternativa-btn" id="botao-0" onclick="registrarResposta('GRP3'); proximaPergunta(6)">
+                <img src="ImgQuest/pocao.png" alt="Imagem 3">
+                <span class="input4 alternativa-btn-text">Poção de cura</span>
+            </div>
+            <div class="input4 alternativa-btn" id="botao-0" onclick="registrarResposta('GRP4'); proximaPergunta(6)">
+                <img src="ImgQuest/neuro.png" alt="Imagem 4">
+                <span class="input4 alternativa-btn-text">Neurotecnologia</span>
+            </div>
+        </div>
+        `;
+    } else if (pergunta === 6) {
+        // Atualiza para a Pergunta 7
+        document.getElementById('content').innerHTML = `
+            <div id="content">
+                  <div class="card">
+            <img src="imgCardPerg/fundoPerg7.png" alt="Descrição da Imagem" class="card-img">
+            <h3><p class="card-question">Você está no The Walking Dead, qual item seria mais útil para você sobreviver?</p></h3>
+        </div>
+    
+        <div class="answers-container">
+            <div class="input4 alternativa-btn" id="botao-0" onclick="registrarResposta('GRP1'); proximaPergunta(7)">
+                <img src="ImgQuest/camuflagem.png" alt="Imagem 1">
+                <span class="input4 alternativa-btn-text">Traje camuflado </span>
+            </div>
+            <div class="input4 alternativa-btn" id="botao-0" onclick="registrarResposta('GRP2'); proximaPergunta(7)">
+                <img src="ImgQuest/WalkTalk.png" alt="Imagem 2">
+                <span class="input4 alternativa-btn-text">Rádio Walk Talk</span>
+            </div>
+            <div class="input4 alternativa-btn" id="botao-0" onclick="registrarResposta('GRP3'); proximaPergunta(7)">
+                <img src="ImgQuest/bastao.png" alt="Imagem 3">
+                <span class="input4 alternativa-btn-text">Taco de beisebol</span>
+            </div>
+            <div class="input4 alternativa-btn" id="botao-0" onclick="registrarResposta('GRP4'); proximaPergunta(7)">
+                <img src="ImgQuest/kit.png" alt="Imagem 4">
+                <span class="input4 alternativa-btn-text">Kit médico</span>
+            </div>
+        </div>
+        `;
+    } else if (pergunta === 7) {
+        verificarPontuacao(); // Redireciona para a página final
+    }
+}
+
+        // Função para verificar a pontuação final e redirecionar
+        function verificarPontuacao() {
+    // Salva a pontuação final no localStorage (já está sendo salvo nas funções anteriores)
+    localStorage.setItem('pontuacao', JSON.stringify(pontuacao));
+
+    // Redireciona para a página desejada
+    window.location.href = 'stick/stick.html'; // Substitua pelo URL correto
+
+    
+}
+    </script>
+</body>
+</html>

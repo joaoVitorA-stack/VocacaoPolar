@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" type="image/png" href="../img/Teste-vocacional.ico">
+    <title>Teste Vocacional</title>
+    <link rel="stylesheet" href="style.css"> 
+</head>
+<body class="bodyQuest">
+
+    <div id="content">
+        <!-- Primeira pergunta -->
+         
+        <div class="card">
+            <img src="./imgCardPerg/fundoPerg1.png" alt="Descrição da Imagem" class="card-img">
+            <h3><p class="card-question">Se você pudesse ter um superpoder, qual você escolheria?</p></h3>
+        </div>
+    
+        <div class="answers-container">
+            <div class="input4 alternativa-btn" id="botao-0" onclick="registrarResposta('GRP1'); proximaPergunta(1)">
+                <img src="./imgperg/voar.png" alt="Imagem 1">
+                <span class="input4 alternativa-btn-text">Voar</span>
+            </div>
+            <div class="input4 alternativa-btn" id="botao-0" onclick="registrarResposta('GRP2'); proximaPergunta(1)">
+                <img src="./imgperg/telecinese.png" alt="Imagem 2">
+                <span class="input4 alternativa-btn-text">Telecinese</span>
+            </div>
+            <div class="input4 alternativa-btn" id="botao-0" onclick="registrarResposta('GRP3'); proximaPergunta(1)">
+                <img src="./imgperg/ler.png" alt="Imagem 3">
+                <span class="input4 alternativa-btn-text">Ler mentes</span>
+            </div>
+            <div class="input4 alternativa-btn" id="botao-0" onclick="registrarResposta('GRP4'); proximaPergunta(1)">
+                <img src="./imgperg/heroina.png" alt="Imagem 4">
+                <span class="input4 alternativa-btn-text">Super força</span>
+            </div>
+        </div>
+    <script>
+
+        // Inicializa ou carrega pontuação do Local Storage
+let pontuacao = {
+    GRP1: 0,
+    GRP2: 0,
+    GRP3: 0,
+    GRP4: 0
+};
+
+// Zera a pontuação no Local Storage quando o teste inicia
+function iniciarTeste() {
+    localStorage.removeItem('pontuacao'); // Remove qualquer pontuação existente
+    pontuacao = {
+        GRP1: 0,
+        GRP2: 0,
+        GRP3: 0,
+        GRP4: 0
+    };
+    console.log('Pontuação inicializada:', pontuacao);
+}
+
+// Atualiza a pontuação e armazena no Local Storage
+function registrarResposta(resposta) {
+    pontuacao[resposta]++;
+    localStorage.setItem('pontuacao', JSON.stringify(pontuacao));
+    console.log(`Pontos Atualizados:`, pontuacao);
+}
+
+
+
+
+        // Função para exibir a próxima pergunta
+        function proximaPergunta(pergunta) {
+            if (pergunta === 1) {
+                document.getElementById('content').innerHTML = `
+                    <div class="container">
+                        <div class="card2">
+                            <img src="./imgCardPerg/fundoPerg2.png" alt="Descrição da Imagem" class="card2-img">
+                            <h3><p class="card2-question">Em um trabalho de escola, qual seria sua função?</p></h3>
+                        </div>
+                        <div class="inputs2">
+                            <button class="input2 alternativa-btn" id="botao-1" onclick="registrarResposta('GRP1'); proximaPergunta(2)"><strong>O Líder</strong>, planeja e organiza o projeto.</button>
+                            <button class="input2 alternativa-btn" id="botao-2" onclick="registrarResposta('GRP2'); proximaPergunta(2)"><strong>O Inovador</strong>, propõe ideias e soluções originais.</button>
+                            <button class="input2 alternativa-btn" id="botao-3" onclick="registrarResposta('GRP3'); proximaPergunta(2)"><strong>O Mentor</strong>, valoriza ouvir todos os pontos de vista.</button>
+                            <button class="input2 alternativa-btn" id="botao-4" onclick="registrarResposta('GRP4'); proximaPergunta(2)"><strong>O Otimista</strong>, cria um ambiente positivo.</button>
+                        </div>
+                    </div>
+                `;
+            } else if (pergunta === 2) {
+                document.getElementById('content').innerHTML = `
+            <div class="card">
+            <img src="imgCardPerg/fundoPerg3.png" alt="Descrição da Imagem" class="card-img">
+            <h3><p class="card-question">Desses famosos, qual deles você gostaria de ser no futuro?</p></h3>
+        </div>
+    
+        <div class="answers-container">
+            <div class="input4 alternativa-btn" id="botao-0" onclick="registrarResposta('GRP1'); proximaPergunta(3)">
+                <img src="imgperg/elon.png" alt="Imagem 1">
+                <span class="input4 alternativa-btn-text">Elon Musk</span>
+            </div>
+            <div class="input4 alternativa-btn" id="botao-0" onclick="registrarResposta('GRP2'); proximaPergunta(3)">
+                <img src="imgperg/mark.avif" alt="Imagem 2">
+                <span class="input4 alternativa-btn-text">Mark Zuckerberg</span>
+            </div>
+            <div class="input4 alternativa-btn" id="botao-0" onclick="registrarResposta('GRP3'); proximaPergunta(3)">
+                <img src="imgperg/martin1.jpg" alt="Imagem 3">
+                <span class="input4 alternativa-btn-text">Martin L. King Jr</span>
+            </div>
+            <div class="input4 alternativa-btn" id="botao-0" onclick="registrarResposta('GRP4'); proximaPergunta(3)">
+                <img src="imgperg/mandela.png" alt="Imagem 4">
+                <span class="input4 alternativa-btn-text">Nelson Mandela</span>
+            </div>
+                `;}else if (pergunta === 3) {
+                document.getElementById('content').innerHTML = `
+                    <div class="container">
+                        <div class="card2">
+                            <img src="imgCardPerg/fundoPerg4.png" alt="Descrição da Imagem" class="card2-img">
+                            <h3><p class="card2-question">Se você pudesse viajar no tempo, para qual época da história você iria?</p></h3>
+                        </div>
+                        <div class="inputs2">
+                            <button class="input2 alternativa-btn" id="botao-1" onclick="registrarResposta('GRP1'); proximaPergunta(4)"><strong>A chegada do homem à Lua</strong>: um pequeno passo, um grande salto.</button>
+                            <button class="input2 alternativa-btn" id="botao-2" onclick="registrarResposta('GRP2'); proximaPergunta(4)"><strong>Era de Ouro de Hollywood</strong>: uma inspiração nos clássicos.</button>
+                            <button class="input2 alternativa-btn" id="botao-3" onclick="registrarResposta('GRP3'); proximaPergunta(4)"><strong>Nascimento do RAP</strong>: moda hippie e música de protesto.</button>
+                            <button class="input2 alternativa-btn" id="botao-4" onclick="registrarResposta('GRP4'); proximaPergunta(4)"><strong>Anos 80</strong>: época criativa com novas músicas, estilos e tecnologias.</button>
+                        </div>
+                    </div> 
+                `;} else if (pergunta === 4) {
+                // Chama a função para verificar a pontuação e redirecionar
+                verificarPontuacao();
+            }
+        }
+
+       // Função para verificar a pontuação e redirecionar
+       function verificarPontuacao() {
+        // Salva a pontuação final no localStorage (já está sendo salvo nas funções anteriores)
+    localStorage.setItem('pontuacao', JSON.stringify(pontuacao));
+
+// Redireciona para a página desejada
+window.location.href = 'memory/memory.html'; // Substitua pelo URL correto
+}
+            
+            
+            // Chama a função para iniciar o teste ao carregar a página
+window.onload = iniciarTeste;
+
+        
+    </script>
+</body>
+</html>

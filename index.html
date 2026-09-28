@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" type="image/png" href="../img/Teste-vocacional.ico">
+    <link rel="stylesheet" href="style.css">
+    <title>Vocação Polar - Descongele seu futuro!</title> 
+</head>
+<body>
+    <header>
+    <div class="img">
+      <a href="index.html">  <img src="img/logo.png"  alt="Logo Urso com a lapela" class="imgLogo"></a>
+    </div>
+
+    <nav id="nav-bar">
+        <ul>
+            <li><a href="index.html">INÍCIO</a></li>
+            <li><a href="descricao.html" data-target="descricao.html" class="nav-link">DESCRIÇÃO</a></li>
+            <li><a href="cursos.html" data-target="cursos.html" class="nav-link">CURSOS</a></li>
+        </ul>
+    </nav>
+
+    <div class="btn1">
+    <img src="img/acess.png" alt="Botão de Acessibilidade" class="imgAcess">  
+  </div>
+
+</header>
+
+    <main class="carrossel"> 
+        <div class="image-container">
+            <img id="leftImage" class="left-image" src="img/gelo.png" alt="Iceberg">
+
+            <div class="center-container" id="centerContainer">
+                
+               
+                <h1>Vocação Polar</h1>
+            <h2>Descongele seu futuro!</h2> 
+                <p>Faça esse teste vocacional para conhecer suas habilidades e descobrir seu curso ideal.</p>
+                <button class="btnIniciar"> INICIAR TESTE </button>
+                <div class="logoetec">
+                </div>
+            </div>
+            
+            <img id="rightImage" class="right-image" src="img/urso.png" alt="Iceberg com o urso mascote">
+        </div>
+        
+    </main>
+
+  
+    <!-- Modais de Alerta -->
+    <!-- Primeira Modal -->
+    <div id="modal1" class="modal">
+        <div class="modal-content"> 
+            
+            <form action="cadastro.php" method="post">
+            
+                
+                            <h2 class="tit">Nos diga mais sobre você!</h2>
+                            <p class="pLogin"> Informe seu dados para começar o teste</p>
+                            <form id="loginForm">
+                                <div id="errorMessage" style="color: red; display: none; margin-bottom: 20px; font-size: 18px;"></div>
+                               <div class="caixaLogin">
+                                <div class="textbox">
+                                    <input type="text" id="name" name="nome" placeholder="Nome Completo" required>
+                                </div>
+                                <div class="textbox">
+                                    <input type="number" id="age" name="idade" placeholder="Idade" required>
+                                </div>
+                                <div class="textbox">
+                                    <select name="escola" id="school">
+                                      <option value="nulo">Selecione sua escola</option>
+                                      <option value="ABILIO FONTES PROF">ABILIO FONTES PROF</option>
+                                      <option value="ADHERBAL DE PAULA FERREIRA">ADHERBAL DE PAULA FERREIRA</option>
+                                      <option value="ALCEU">ALCEU GOMES DA SILVA PROF</option>
+                                      <option value="ASTOR VASQUES LOPES PROF">ASTOR VASQUES LOPES PROF</option>
+                                      <option value="ATALIBA JULIO DE OLIVEIRA PROF">ATALIBA JULIO DE OLIVEIRA PROF</option>
+                                      <option value="CARLOS EDUARDO MATTARAZZO CARREIRA PROF">CARLOS EDUARDO MATTARAZZO CARREIRA PROF</option>
+                                      <option value="CORINA CACAPAVA BARTH PROFA">CORINA CACAPAVA BARTH PROFA</option>
+                                      <option value="DARCY VIEIRA">DARCY VIEIRA</option>
+                                      <option value="DARCY PEREIRA DE MORAES">DARCY PEREIRA DE MORAES</option>
+                                      <option value="BERNARDES JUNIOR DESEMBARGADOR">BERNARDES JUNIOR DESEMBARGADOR</option>
+                                      <option value="ELISIARIO MARTINS DE MELLO PROF">ELISIARIO MARTINS DE MELLO PROF</option>
+                                      <option value="ERNESTA XAVIER RABELO ORSI PROF">ERNESTA XAVIER RABELO ORSI PROF</option>
+                                      <option value="ERNESTINA LOUREIRO MIRANDA PROFA">ERNESTINA LOUREIRO MIRANDA PROFA</option>
+                                      <option value="EURINY DE SOUZA VIEIRA PROFA">EURINY DE SOUZA VIEIRA PROFA</option>
+                                      <option value="FERNANDO PRESTES CEL">FERNANDO PRESTES CEL</option>
+                                      <option value="FONSECA MAJOR">FONSECA MAJOR</option>
+                                      <option value="JAIR BARTH PROF">JAIR BARTH PROF</option>
+                                      <option value="JOSE DA CONCEICAO HOLTZ PROF">JOSE DA CONCEICAO HOLTZ PROF</option>
+                                      <option value="JUVENAL PAIVA PEREIRA PROF">JUVENAL PAIVA PEREIRA PROF</option>
+                                      <option value="MARIA DE LOURDES BARREIROS CARVALHO PROFA">MARIA DE LOURDES BARREIROS CARVALHO PROFA</option>
+                                      <option value="MODESTO TAVARES DE LIMA PROF">MODESTO TAVARES DE LIMA PROF</option>
+                                      <option value="PEIXOTO GOMIDE">PEIXOTO GOMIDE</option>
+                                      <option value="PERICLES GALVAO PROF">PERICLES GALVAO PROF</option>
+                                      <option value="SEBASTIAO PINTO PROF">SEBASTIAO PINTO PROF</option>
+                                      <option value="SEBASTIAO VILLACA PROF">SEBASTIAO VILLACA PROF</option>
+                                      <option value="VIRGILIO SILVEIRA PROF">VIRGILIO SILVEIRA PROF</option>
+                                      </select>
+                             </div>     
+                             <div class="textbox">
+                  <select name="serie" id="grade">
+
+                    <option value="0">Selecione sua Série</option>
+                    <option value="6">6° ano</option>
+                    <option value="7">7° ano</option>
+                    <option value="8">8° ano</option>
+                    <option value="9">9° ano</option>
+                    <option value="10">1° Ensino Médio</option>
+                    <option value="11">2° Ensino Médio</option>
+                    <option value="12">3° Ensino Médio</option>
+                    <option value="13">Já formado</option>
+                  </select>
+                </div>
+                            </div>
+                                <button onclick="handleFormSubmit(event)" type="submit" class="btn2">Cadastrar</button>
+
+                            
+                            </form>
+                        </div>
+                    
+                    </form>
+        
+        </div>
+    
+
+    
+
+    <!-- Terceira Modal -->
+    <div id="modal2" class="modal">
+        <div class="modal-content">
+            <p class="tutorial">TUTORIAL</p>
+            <h3>Mostre-nos seus interesses respondendo as perguntas!</h3>
+            <div class="caixaPergunta"> Do que você mais gosta? </div><div class="int"><img src="./img/interro.png" alt="" width="90px"></div>
+            <img src="./img/browser.png" alt="" srcset="" width="40px" class="brow">
+            <div class="alternativa-contai">
+            <img src="./img/choc.png" alt="" class="choc-image">  
+            <div class="alternativaText">Gosto de chocolate</div>
+        </div>
+
+        <div class="alternativa-contai"> 
+            <img src="./img/ice.png" alt="" class="ice-image">
+             <div class="alternativaText">  Gosto de sorvete</div>
+        </div>
+           <button onclick="showNextModal('modal3')">PRÓXIMO</button>
+        </div>
+    </div>
+
+    <div id="modal3" class="modal">
+        <div class="modal-content"> 
+            <p class="tutorial">TUTORIAL</p>
+             <h3>As imagens correspondem às respostas também!</h3>
+            <div class="caixaPergunta"> Com quem você se identifica? </div>
+            <div class="int2"><img src="./img/interro.png" alt="" width="90px"></div>
+
+            <img src="./img/browser.png" alt="" srcset="" width="40px" class="browIMG">
+            <div class="imgTut">
+                <img src="./img/chef.png" alt="" srcset="">
+                <img src="./img/aero.png" alt="" srcset="">
+                <img src="./img/fabr.png" alt="" srcset="">
+                <img src="./img/pilot.png" alt="" srcset="">
+
+
+            </div>
+            
+            
+            <button onclick="closeModal('modal3')" class="btnTut">INICIAR</button>
+        </div>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>

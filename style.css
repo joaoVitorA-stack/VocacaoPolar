@@ -1,0 +1,1047 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+*,::before,
+::after  {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-weight: 500;
+    font-family: "Poppins", sans-serif;     
+}  
+
+.strongDes{
+    font-weight: bold;
+    font-size: 22px;
+}
+
+body {
+    background-color: #f9f3e8;
+    display: flex;
+    flex-direction: column; 
+    height: 100vh;
+    overflow: hidden;
+    min-height: 100vh;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    justify-content: center;
+}
+
+.tutorial{
+    font-weight: bold;
+    font-size: 20px;
+    color: #13446a;
+    border: 1px solid rgb(179, 179, 179);
+    padding: 5px 20px;
+    border-radius: 20px;
+    margin: 0;
+}
+
+
+/* ESTILO DO HEADER */
+
+header {
+    display: flex;
+    justify-content: space-between;
+    background-color: #f9f3e8;
+    width: 100vw;
+    height: 20vh;
+    font-size: 20px;
+    font-weight: 900;
+    font-style: bold;
+}
+
+.img {
+    width: 33vw;
+    display: flex;
+    padding-left: 70px;
+    align-items: center;
+}
+
+
+nav {
+    width: 33vw;
+    align-self: center;
+}
+
+ul {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+li {
+    list-style-type: none;
+ 
+}
+
+a {
+    text-decoration: none;
+    color: #5e5d5d;
+    font-weight: bold;
+    
+}
+
+li:hover {
+    cursor: pointer;
+}
+
+
+.btn1{
+    width: 33vw;
+    display: flex;
+    justify-content: flex-end;
+    padding-right: 70px;
+    align-self: center;
+}
+
+.imgAcess{
+    height: 6vh;
+    cursor: pointer;
+}
+
+
+/*ESTILO DO MAIN*/
+
+main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    width: 100vw;
+    height: calc(100vh - 20vh); /* Altura considerando a navbar */
+
+}
+
+.image-container {
+    width: 100vw;
+    height: calc(100vh - 20vh);
+    display: flex;
+    position: relative;
+   
+}
+
+.image-container img {
+    height: auto;
+    position: absolute;
+
+}
+
+.left-image {
+    left: 0;
+    bottom: 0;
+    max-width: 25%; /* Ajuste conforme necessário */
+}
+
+.right-image {
+    right: 0;
+    bottom: 0;
+    max-width: 35%; /* Ajuste conforme necessário */
+   
+}
+
+.center-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column; /* Alinha elementos verticalmente */
+    flex: 1;
+    position: relative;
+    width: 33vw;
+    min-height: 60vh;
+    text-align: center;
+    gap: 20px;
+}
+.logoetec{
+    background-image: url(https://bkpsitecpsnew.blob.core.windows.net/uploadsitecps/sites/90/2024/03/etec-darcy_pereira_de_moraes.png);
+    background-size: contain;
+    width: 300px;
+    height: 100px;
+    background-repeat: no-repeat;
+    background-position: center;
+    margin-top: 60px;
+}
+
+
+.carrossel h1, .carrossel h2, .carrossel p {
+    margin: 0;
+    width: 28vw;
+}
+
+.carrossel h1 {
+    font-size: 3rem; /* Altere conforme necessário */
+    margin-bottom: 0.5rem; /* Espaçamento entre h1 e h2 */
+    font-weight: bold;
+   
+}
+
+.carrossel h2 {
+    font-size: 1.6rem; /* Altere conforme necessário */
+    line-height: 1.5; /* Espaçamento entre linhas para a quebra de linha */
+    margin-top: 25px;
+    font-weight: bold;
+}
+
+.carrossel p{
+    font-size: 1.6rem; /* Altere conforme necessário */
+    line-height: 1.5; /* Espaçamento entre linhas para a quebra de linha */
+}
+
+.btnIniciar{
+    background-color: #5ab6c4;
+    color: #1e3557;
+    font-weight: bold;
+    border: none;
+    padding: 10px 22px;
+    font-size: 25px;
+    border-radius: 50px;
+    margin-top: 25px;
+}
+
+.btnIniciar:hover{
+    background-color: #1e3557;
+    color: #ffffff;
+    font-weight: bold;
+    cursor: pointer;
+    
+}
+/*ESTILO DESCRIÇÃO*/
+
+.mainDescricao{
+    align-items: center;
+}
+
+
+.left_container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column; /* Alinha elementos verticalmente */
+    left: 1;
+    position: relative;
+    width: 70vw;
+    height: 100vh;
+    text-align: left;
+    gap: 50px;
+    margin-top: 0;
+    padding-top: 0;
+}
+
+.left_container > img {
+    width: 40%;
+}
+
+.right_container > img{
+    width: 45%;
+    margin-bottom: 0px;
+}
+
+.right_container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column; /* Alinha elementos verticalmente */
+    position: relative;
+    width: 70vw;
+    height: 100vh;
+    gap: 100px;  
+}
+
+.caixa_texto{
+    width: 30vw; 
+    
+}
+
+.caixa_texto > h2{
+    font-size: 40px;
+    font-weight: bolder;
+    color: #e63649;
+    margin-bottom: 30px;
+    background-color: #ffffff83;
+    border-radius: 20px;
+    padding: 2px ;
+    text-align: center;
+    
+}
+
+.caixa_texto > p{
+    font-size: 22px;
+    width: 93%;
+    margin-left: 50px;
+}
+
+
+/*ESTILO FOOTER*/
+
+.image-footer {
+    height: 15vh; /* Ajuste a altura do footer conforme necessário */
+    position: fixed;
+    bottom: 0;
+}
+
+.image-footer-cursos {
+    height: 15vh; /* Ajuste a altura do footer conforme necessário */
+    position: fixed;
+    bottom: 0;
+}
+
+
+
+
+/* STYLE CURSOS */
+
+.mainCursos{
+    align-items: center;
+}
+
+.carrosel-cursos{
+    width: 100vw; 
+    display: flex;
+    flex-direction: column;
+    height: 80vh;
+    margin-top: 110px;
+}
+
+.carrosel-cursos > h2{
+    align-self: center;
+    text-align: center;
+    width: 25%;
+    padding-bottom: 50px;
+}
+
+::before,
+::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
+
+#cCarousel {
+  position: relative;
+    width: 55vw;
+  margin: auto;
+ 
+}
+
+.tit{
+    font-size: 33px;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+#cCarousel .arrow {
+  position: absolute;
+  top: 50%;
+  display: flex;
+  width: 50px;
+  height: 50px;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  z-index: 1;
+  font-size: 30px;
+  color: white;
+  background: #00000072;
+  cursor: pointer;
+}
+
+#cCarousel > #prev {
+  left: 0px;
+}
+
+#cCarousel > #next {
+  right: 0px;
+}
+
+#carousel-vp {
+  width: 800px;
+  height: 400px;
+  display: flex;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+  margin: auto;
+}
+
+@media (max-width: 770px) {
+  #carousel-vp {
+    width: 510px;
+  }
+}
+
+@media (max-width: 510px) {
+  #carousel-vp {
+    width: 250px;
+  }
+}
+
+#cCarousel #cCarousel-inner {
+  display: flex;
+  position: absolute;
+  transition: 0.3s ease-in-out;
+  gap: 30px;
+  left: 0px;
+}
+
+.cCarousel-item {
+  width: 290px;
+  height: 365px;
+  border-right: 5px solid #467A9C;
+  border-radius: 15px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+background-color: rgb(255, 255, 255);
+}
+
+.cCarousel-item > img {
+width: 250px;
+height: 300px;
+  object-fit: contain;
+  min-height: 0px;
+  color: white;
+  padding-top: 18px;
+
+
+}
+
+.cCarousel-item .infos {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  color: black;
+
+  width: 270px;
+  
+}
+
+.cCarousel-item .infos > p{
+    font-size: 16px;
+    text-align: center;
+   width: 260px;
+   height: 150px;
+    line-height: 1.7;
+    align-content: center;
+}
+
+.cCarousel-item .infos > h3{
+    font-weight: bold;
+    font-size: 20px;
+}
+
+/* Estilos para o modal */
+.modal {
+    display: none;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(19, 68, 106, 0.5);
+    align-items: center;
+    justify-content: center;
+}
+
+.pLogin{
+    margin-bottom: 35px;
+    font-weight: bold;
+}
+
+
+
+.modal-content {
+    height: 75%;
+    justify-content: space-evenly;
+    background: #fff;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+    width: 600px;
+    text-align: center; 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    row-gap: 40px;
+
+}
+
+.modal button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #3498db;
+    border: none;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+    width : 40%;
+    
+}
+
+.modal button:hover {
+    background-color: #2980b9;
+}
+
+/*estilos cards e botões 1° pagina perguntas*/
+
+.bodyQuest{
+    background-image: url(img/fundoPerg.png);
+    background-size:  cover;
+    background-position: center;  
+}
+
+.card {
+    position: relative;
+    width: 600px;
+    height: 500px;
+    background-color: #000;
+    color: white;
+    overflow: hidden;
+    border-radius: 15px;
+    margin-top: 50px;
+    margin: auto;
+}
+
+.card-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.card-question {
+    position: absolute;
+    bottom: 0px;
+    margin: 0;
+    padding: 10px;
+    font-size: 20px;
+    color: white;
+    background-color: #000000dc;
+    width: 100%;
+    text-align: center;
+}
+
+.inputs {
+    display: flex;
+    justify-content: space-around;
+    width: 900px;
+    margin-top: 50px;
+}
+
+.input.alternativa-btn {
+    color: #fff;
+    padding: 15px 30px;
+    font-size: 18px;
+    border: 2px;
+    border-radius: 10px;
+    background-color: #13446a;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+
+.input.alternativa-btn:hover {
+    background-color: #348fd4;
+}
+
+/*2° pergunta*/
+
+.container {
+    display: flex;
+    column-gap: 100px;
+    width: 1200px;
+}
+
+.card2 {
+    position: relative;
+    width: 600px;
+    height: 500px;
+    background-color: #000;
+    color: white;
+    overflow: hidden;
+    border-radius: 15px;
+    
+}
+
+.card2-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+
+.card2-question {
+    position: absolute;
+    width: 100%;
+    bottom: 0px;
+    text-align: center;
+    padding: 10px;
+    margin: 0;
+    font-size: 20px;
+    color: white;
+    background-color: #000000dc;
+}
+
+.inputs2 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    margin-left: 20px;
+    row-gap: 40px;
+}
+
+.input2.alternativa-btn {
+    padding: 15px 30px;
+    font-size: 18px;
+    border: 2px;
+    border-radius: 10px;
+    background-color: #aacde7;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    width: 500px;
+}
+
+.input2.alternativa-btn:hover {
+    background-color: #ffffff;
+    border: 2px solid #e63649;
+}
+
+/*estilos emojis 3° perguntas*/
+.inputs3 {
+    display: flex;
+    justify-content: space-around;
+    width: 600px;
+    font-size: 50px;
+    margin-top: 30px;
+}
+
+.input3.alternativa-btn {
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.input3.alternativa-btn:hover {
+    transform: scale(1.2);
+}
+
+
+
+
+
+/* login*/
+
+
+
+/* Caixa de login */
+
+ 
+/* Título */
+.login-box > h2 {
+    color: #333;
+    text-align: center;
+    font-size: 32px;
+    height: 50px;
+
+}
+
+.login-box > p{
+    font-size: 1.3rem;
+    
+    width: 82%;
+
+}
+ 
+
+
+.caixaLogin{
+    display: flex;
+    flex-direction: column;
+    row-gap: 20px;
+    width: 100%;
+    align-items: center;
+}
+/* Caixa de texto */
+.textbox {
+    
+    width: 90%; /* Ajusta a largura do contêiner das caixas de texto */
+}
+ 
+.textbox input {
+    width: 100%; /* Define a largura das caixas de entrada para 100% */
+    padding: 10px;
+    border: 1px solid #232323;
+    border-radius: 5px;
+    font-size: 20px;
+}
+
+.textbox select {
+    width: 100%; /* Define a largura das caixas de entrada para 100% */
+    padding: 10px;
+    border: 1px solid #6e6e6e;
+    border-radius: 5px;
+    font-size: 18px;
+    color: #232323;
+}
+ 
+ 
+/* Botão de login */
+.btn2 {
+   
+    padding: 10px;
+    background: #6e8efb;
+    border: none;
+    border-radius: 5px;
+    color: #fff;
+    font-size: 18px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+ 
+.btn:hover {
+    background: #5a7afc;
+}
+
+
+
+
+/*AVATARES*/
+
+.avatares{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    align-items: center;
+    column-gap: 5px;
+    justify-content: space-between;
+}
+
+.pAvatar{
+    
+}
+
+.avatar:hover{
+    width: 160px;
+    opacity: 1;
+}
+.avatar{
+   opacity: 0.6;
+   border-radius: 100%;
+}
+
+.selected {
+    border: 3px solid #13446a;
+    opacity: 1;
+    width: 175px;
+}
+
+.caixaPergunta { 
+    width: 55%;
+    max-width: 600px; /* Max width to keep it in proportion */
+    padding: 20px;
+    border-radius: 20px;
+    background-color: #e9f3ff;
+    border: 4px solid #1e3557;
+    font-size: 18px; /* Adjust font size for responsiveness */
+    font-weight: bold;
+    margin: 20px auto; /* Center horizontally and add margin */
+}
+
+/* Image Container Styles */
+.alternativa-container {
+    position: relative; /* Define o contêiner como relativo para que a imagem possa ser posicionada absolutamente dentro dele */
+    width: 80%; /* Ajuste a largura conforme necessário */
+    max-width: 500px; /* Limita a largura máxima */
+    margin: 20px auto; /* Centraliza o contêiner */
+    text-align: center; /* Centraliza o texto */
+}
+
+/* Estilos do texto alternativaText */
+.alternativaText {
+    background-color: #1e3557;
+    padding: 15px 30px;
+    color: #ffffff;
+    font-weight: bold;
+    border-radius: 20px;
+    text-align: center;
+    font-size: 18px; /* Ajuste o tamanho da fonte conforme necessário */
+    position: relative; /* Garante que o texto esteja em sua posição normal dentro do contêiner */
+}
+
+/* Estilos da imagem choc-image */
+.choc-image {
+    position: absolute; /* Permite posicionar a imagem de forma absoluta em relação ao contêiner */
+    top: 58%; /* Ajusta a posição vertical da imagem */
+    left: 43%; /* Centraliza horizontalmente em relação ao contêiner */
+    transform: translate(-50%, -50%); /* Ajusta a posição da imagem para centralizar sobre o texto */
+    width: 20%; /* Ajusta a largura da imagem como porcentagem do contêiner */
+    max-width: 80px; /* Limita o tamanho máximo da imagem */
+    height: auto; /* Mantém a proporção da imagem */
+    object-fit: cover; /* Garante que a imagem se ajuste bem ao contêiner */
+    border-radius: 50%; /* Torna a imagem circular se desejado */
+    z-index: 1; /* Garante que a imagem esteja acima do texto */
+}
+
+.ice-image {
+    position: absolute; /* Permite posicionar a imagem de forma absoluta em relação ao contêiner */
+    top: 68%; /* Ajusta a posição vertical da imagem */
+    left: 44%; /* Centraliza horizontalmente em relação ao contêiner */
+    transform: translate(-50%, -50%); /* Ajusta a posição da imagem para centralizar sobre o texto */
+    width: 20%; /* Ajusta a largura da imagem como porcentagem do contêiner */
+    max-width: 80px; /* Limita o tamanho máximo da imagem */
+    height: auto; /* Mantém a proporção da imagem */
+    object-fit: cover; /* Garante que a imagem se ajuste bem ao contêiner */
+    border-radius: 50%; /* Torna a imagem circular se desejado */
+    z-index: 1; /* Garante que a imagem esteja acima do texto */
+}
+
+@media (max-width: 1350px) {
+    .choc-image {
+        width: 40%; /* Ajusta a largura para telas menores */
+        max-width: 80px; /* Ajusta o tamanho máximo da imagem */
+        top: 56%; /* Ajusta a posição vertical da imagem */
+        left: 41%;
+    }
+    .ice-image {
+        width: 40%; /* Ajusta a largura para telas menores */
+        max-width: 80px; /* Ajusta o tamanho máximo da imagem */
+        top: 67%; /* Ajusta a posição vertical da imagem */
+        left: 41%;
+    }
+}
+
+@media (max-width: 1200px) {
+    .choc-image {
+        width: 40%; /* Ajusta a largura para telas menores */
+        max-width: 80px; /* Ajusta o tamanho máximo da imagem */
+        top: 56%; /* Ajusta a posição vertical da imagem */
+        left: 39%;
+    }
+    .ice-image {
+        width: 40%; /* Ajusta a largura para telas menores */
+        max-width: 80px; /* Ajusta o tamanho máximo da imagem */
+        top: 67%; /* Ajusta a posição vertical da imagem */
+        left: 39%;
+    }
+}
+
+@media (max-width: 1000px) {
+    .choc-image {
+        width: 40%; /* Ajusta a largura para telas menores */
+        max-width: 80px; /* Ajusta o tamanho máximo da imagem */
+        top: 56%; /* Ajusta a posição vertical da imagem */
+        left: 38%;
+    }
+
+    .ice-image {
+        width: 40%; /* Ajusta a largura para telas menores */
+        max-width: 80px; /* Ajusta o tamanho máximo da imagem */
+        top: 67%; /* Ajusta a posição vertical da imagem */
+        left: 38%;
+    }
+
+    .alternativaText {
+        font-size: 16px; /* Ajuste o tamanho da fonte para telas menores */
+    }
+}
+
+@media (max-width: 900px) {
+    .choc-image {
+        width: 40%; /* Ajusta a largura para telas menores */
+        max-width: 80px; /* Ajusta o tamanho máximo da imagem */
+        top: 56%; /* Ajusta a posição vertical da imagem */
+        left: 37%;
+    }
+
+    .alternativaText {
+        font-size: 16px; /* Ajuste o tamanho da fonte para telas menores */
+    }
+}
+
+/* Media Queries para ajustar o tamanho da imagem em telas menores */
+@media (max-width: 768px) {
+    .choc-image {
+        width: 40%; /* Ajusta a largura para telas menores */
+        max-width: 80px; /* Ajusta o tamanho máximo da imagem */
+        top: 56%; /* Ajusta a posição vertical da imagem */
+        left: 34%;
+    }
+
+    .alternativaText {
+        font-size: 16px; /* Ajuste o tamanho da fonte para telas menores */
+    }
+}
+
+@media (max-width: 480px) {
+    .choc-image {
+        width: 30%; /* Ajusta a largura para telas muito pequenas */
+        max-width: 90px; /* Ajusta o tamanho máximo da imagem */
+        top: 56%; /* Ajusta a posição vertical da imagem */
+        left: 23%;
+    }
+
+    .ice-image {
+        width: 30%; /* Ajusta a largura para telas muito pequenas */
+        max-width: 90px; /* Ajusta o tamanho máximo da imagem */
+        top: 67%; /* Ajusta a posição vertical da imagem */
+        left: 23%;
+    }
+
+    .alternativaText {
+        font-size: 14px; /* Ajuste o tamanho da fonte para telas muito pequenas */
+    }
+}
+
+/* Heading Styles */
+.modal-content > h3 {
+    font-weight: bold;
+    font-size: 24px; /* Adjust font size for responsiveness */
+    width: 100%;
+    margin-top: 0;
+}
+
+/* Internal Styles */
+.int {
+    position: absolute;
+    right: 40vw; /* Adjust positioning for responsiveness */
+    bottom: 26vw;
+}
+
+.int2 {
+    position: absolute;
+    right: 40vw; /* Adjust positioning for responsiveness */
+    bottom: 25vw;
+}
+
+.brow{
+    position: fixed;
+    bottom: 142vw; /* Adjust positioning for responsiveness */
+    right: 43vw;
+    z-index: 1;
+}
+
+.browIMG {
+    position: fixed;
+    bottom: 17vw; /* Adjust positioning for responsiveness */
+    right: 74vh;
+}
+
+
+/* Tutorial Button Styles */
+.btnTut {
+    margin: 20px;
+    font-weight: bold;
+}
+@media (max-width: 900px) {
+    .caixaPergunta, .alternativaText, .modal-content {
+        width: 95%; /* Adjust widths for smaller screens */
+    }
+
+    .modal-content > h3 {
+        font-size: 20px;
+    }
+
+    .imgTut > img {
+        width: 60px;
+        height: 60px;
+    }
+
+    .brow {
+        right: 2vw;
+        bottom: 10vw;
+    }
+
+    .int{
+        right: 13vw; /* Adjust positioning for responsiveness */
+        bottom: 49vw;
+    }
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+    .caixaPergunta, .alternativaText, .modal-content {
+        width: 95%; /* Adjust widths for smaller screens */
+    }
+
+    .modal-content > h3 {
+        font-size: 20px;
+    }
+
+    .imgTut > img {
+        width: 60px;
+        height: 60px;
+    }
+
+    .brow {
+        right: 2vw;
+        bottom: 10vw;
+    }
+
+    .int{
+        right: 13vw; /* Adjust positioning for responsiveness */
+        bottom: 58vw;
+    }
+}
+
+@media (max-width: 480px) {
+    .modal-content {
+        padding: 10px;
+    }
+
+    .caixaPergunta, .alternativaText {
+        font-size: 16px; /* Adjust font size for very small screens */
+    }
+
+    .modal button {
+        width: 100%; /* Full width buttons for small screens */
+    }
+
+    .imgTut {
+        flex-direction: column;
+    }
+}
+
+strong{
+    font-weight: bold;
+    font-size: 20px;
+}
+
+/*estilo 4° pergunta */
+.answers-container {
+    display: flex;
+    justify-content: space-evenly;
+    width: 900px;
+    margin-top: 40px;
+}
+
+.input4.alternativa-btn {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    background-color: #fff;
+    width: 190px;
+    padding: 10px;
+    height: 190px;
+    row-gap: 12px;
+    border-radius: 20px;
+}
+
+.input4.alternativa-btn:hover{
+    border: 2px solid #ca2b3b;
+    
+}
+
+.input4.alternativa-btn > img {
+    width: 130px;
+    border-radius: 100%;
+}
+
+.input4.alternativa-btn-text {
+    font-size: 18px;
+    color: #000;
+    border: 1px;
+    border-radius: 5px;
+    cursor: pointer; 
+    width: 250px;
+}
