@@ -491,6 +491,112 @@ height: 300px;
     background-position: center;  
 }
 
+.bodyQuest.questionnaire-page {
+    min-height: 100vh;
+    height: auto;
+    overflow-y: auto;
+    justify-content: flex-start;
+    padding: 24px;
+}
+
+.questionnaire-progress {
+    display: grid;
+    grid-template-columns: 1fr minmax(120px, 320px) auto;
+    align-items: center;
+    gap: 20px;
+    width: min(100%, 1050px);
+    height: auto;
+    margin: 0 auto;
+    color: #13446a;
+    font-size: 14px;
+    font-weight: 700;
+}
+
+.questionnaire-progress progress {
+    width: 100%;
+    height: 10px;
+    accent-color: #e63649;
+}
+
+.questionnaire {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin: auto 0;
+    padding: 32px 0;
+}
+
+.questionnaire-card {
+    width: min(100%, 860px);
+    padding: clamp(24px, 5vw, 48px);
+    border-radius: 15px;
+    background: #fff;
+    box-shadow: 0 16px 48px #102d4930;
+}
+
+.questionnaire-label {
+    margin-bottom: 14px;
+    color: #e63649;
+    font-size: 14px;
+    font-weight: 700;
+}
+
+.questionnaire-card h1 {
+    margin-bottom: 28px;
+    color: #13446a;
+    font-size: clamp(22px, 4vw, 32px);
+    line-height: 1.3;
+}
+
+.questionnaire-options {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+}
+
+.questionnaire-option {
+    min-height: 76px;
+    padding: 16px 18px;
+    border: 2px solid #d5e3ec;
+    border-radius: 10px;
+    background: #f4f8fa;
+    color: #173b56;
+    font: inherit;
+    line-height: 1.45;
+    text-align: left;
+    cursor: pointer;
+    transition: background-color 160ms ease, border-color 160ms ease, transform 160ms ease;
+}
+
+.questionnaire-option:hover,
+.questionnaire-option:focus-visible {
+    transform: translateY(-2px);
+    border-color: #e63649;
+    background: #fff;
+    outline: none;
+}
+
+@media (max-width: 640px) {
+    .bodyQuest.questionnaire-page {
+        padding: 16px;
+    }
+
+    .questionnaire-progress {
+        grid-template-columns: 1fr auto;
+        gap: 8px 12px;
+        font-size: 12px;
+    }
+
+    .questionnaire-progress progress {
+        grid-column: 1 / -1;
+        grid-row: 2;
+    }
+
+    .questionnaire-options {
+        grid-template-columns: 1fr;
+    }
+}
+
 .card {
     position: relative;
     width: 600px;

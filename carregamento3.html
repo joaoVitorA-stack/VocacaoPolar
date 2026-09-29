@@ -171,6 +171,12 @@ function createSnowflake() {
 
         // Função para redirecionar com base no grupo com mais pontos
         function redirecionarParaPagina(grupo) {
+            const paginaResultado = localStorage.getItem('paginaResultado');
+            if (paginaResultado) {
+                window.location.href = paginaResultado;
+                return;
+            }
+
             let urlDestino;
 
             switch (grupo) {
